@@ -1,16 +1,22 @@
+// Data Items
 const menuItemArr = ["AIR FORCE", "JORDAN", "BLAZER", "CRATER", "HIPPIE"];
+
+// Selecting Elements
 var navBottom = document.querySelector(".navBottom");
-
-// for (let i = 0; i < menuItemArr.length; i++) {
-//   let element = document.createElement("h3");
-//   element.innerHTML = `<h3 class="menuItem">${menuItemArr[i]}</h3>`;
-//   navBottom.appendChild(element);
-// }
-
+var sliderItem = document.querySelector(".sliderItem");
+const sliderWrapper = document.querySelector(".sliderWrapper");
+//
 menuItemArr.forEach((e) => {
   let element = document.createElement("h3");
   element.className = "menuItem";
   element.innerText = `${e}`;
-  console.log(element.innerHTML);
   navBottom.appendChild(element);
+});
+
+// adding on click for slider
+const menuItems = document.querySelectorAll(".menuItem");
+menuItems.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    sliderWrapper.style.transform = `translateX(${-100 * index}vw)`;
+  });
 });

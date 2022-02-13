@@ -10,6 +10,9 @@
   --nav-bg: #111;
   --search-bg: #808080;
 }
+body{
+  overflow-x: hidden;
+}
 nav {
   background-color: var(--nav-bg);
   padding: 20px 50px;
@@ -44,18 +47,97 @@ nav {
   border-bottom: 2px solid green;
   font-size: larger;
 }
-.limitedOffer:hover{
-    cursor: pointer;
+.limitedOffer:hover {
+  cursor: pointer;
 }
-.navBottom{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 20px;
+.navBottom {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
 }
-.menuItem{
-    color: lightgray;
-    font-weight: 400;
+.menuItem {
+  color: lightgray;
+  font-weight: 400;
 }
-.menuItem:hover{
-    cursor: pointer;
+.menuItem:hover {
+  cursor: pointer;
+}
+.sliderWrapper {
+  display: flex;
+  width: 500vw;
+  transition: all 1s ease-in-out;
+  overflow: hidden;
+}
+.sliderItem {
+  background-image: url(./images/background-wall.jpg);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+  /* border: 2px solid red; */
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.sliderImage {
+  z-index: 2;
+}
+.sliderBg {
+  background-color: #369e62;
+  height: 750px;
+  width: 750px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 130px;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: space-between;
+  align-items: center;
+}
+.sliderTitle {
+  color: white;
+  text-align: center;
+  font-size: 60px;
+}
+.sliderPrice {
+  border: 1px solid gray;
+  font-weight: 500;
+  font-size: 50px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: 10px;
+}
+.buyButton {
+  font-size: 30px;
+  font-weight: 900;
+  color: white;
+  border: 1px solid gray;
+  cursor: pointer;
+  background-color: black;
+  padding: 5px;
+  border-radius: 10px;
+}
+.buyButton:hover {
+  color: black;
+  background-color: white;
+}
+.sliderItem:nth-child(1) .sliderBg {
+  background-color: 369e62;
+}
+.sliderItem:nth-child(2) .sliderBg {
+  background-color: rebeccapurple;
+}
+.sliderItem:nth-child(3) .sliderBg {
+  background-color: teal;
+}
+.sliderItem:nth-child(4) .sliderBg {
+  background-color: cornflowerblue;
+}
+.sliderItem:nth-child(5) .sliderBg {
+  background-color: rgb(124, 115, 80);
 }
