@@ -101,11 +101,40 @@ products.forEach((e) => {
   navBottom.appendChild(element);
 });
 
-// adding on click for slider
+const currentproductName = document.querySelector(".productName");
+const currentProductPrice = document.querySelector(".productPrice");
+const currentProductImage = document.querySelector(".productImageImage");
+const currentColorBox = document.querySelectorAll(".color-box");
+const currentSizeBox = document.querySelectorAll(".size-box");
+
 const menuItems = document.querySelectorAll(".menuItem");
 menuItems.forEach((item, index) => {
   item.addEventListener("click", () => {
+    // adding on click for slider
     sliderWrapper.style.transform = `translateX(${-100 * index}vw)`;
+
+    // changing product title name
+    currentproductName.textContent = products[index].title;
+
+    // changing product price
+    currentProductPrice.textContent = "$" + products[index].price;
+
+    currentProductImage.src = products[index].colors[0].img;
+
+    // changing product available colors
+    currentColorBox.forEach((color, colorIndex) => {
+      color.style.backgroundColor = products[index].colors[colorIndex].code;
+      color.style.border = "1px solid black";
+
+      // changing product image on click
+      color.addEventListener("click", () => {
+        currentProductImage.src = products[index].colors[colorIndex].img;
+        currentColorBox.forEach((colorInner) => {
+          colorInner.style.border = "1px solid black";
+        });
+        color.style.border = "4px solid green";
+      });
+    });
   });
 });
 
@@ -128,7 +157,21 @@ products.forEach((item, index) => {
   <div class="flex-column">
     <h1 class="sliderTitle">${item.title}<br>NEW<br>SEASON</h1>
     <h2 class="sliderPrice">$${item.price}</h2>
+    <a href="#product">
     <button class="buyButton">BUY NOW!</button>
+    </a>
   </div>
 </div>`;
+});
+
+// adding selected effect on sizes
+currentSizeBox.forEach((sizeBox) => {
+  sizeBox.addEventListener("click", () => {
+    currentSizeBox.forEach((sizeBoxInner) => {
+      sizeBoxInner.style.backgroundColor = "white";
+      sizeBoxInner.style.color = "black";
+    });
+    sizeBox.style.backgroundColor = "black";
+    sizeBox.style.color = "white";
+  });
 });
