@@ -4,7 +4,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-
 :root {
   --blue: #1e90ff;
   --nav-bg: #111;
@@ -33,18 +32,15 @@ nav {
   align-items: center;
   justify-content: space-between;
 }
-
 .search > input {
   border: none;
   background-color: transparent;
   color: white;
   margin-right: 5px;
 }
-
 .search > input::placeholder {
   color: whitesmoke;
 }
-
 .limitedOffer {
   color: white;
   border-bottom: 2px solid green;
@@ -146,7 +142,6 @@ nav {
 .sliderItem:nth-child(5) .sliderBg {
   background-color: rgb(124, 115, 80);
 }
-
 .features {
   display: flex;
   align-items: center;
@@ -231,7 +226,6 @@ nav {
   border-radius: 5px;
   margin-right: 10px;
   cursor: pointer;
-  /* border: 1px solid black; */
 }
 .sizes {
   display: flex;
@@ -259,22 +253,187 @@ nav {
   -webkit-box-shadow: 6px 6px 14px -4px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 6px 6px 14px -4px rgba(0, 0, 0, 0.75);
 }
-
-/* .paymentModal{
-  height: 80vh;
-  width: 50vw;
+/* payment modal style */
+.paymentModal {
+  width: 500px;
+  height: 500px;
+  background-color: white;
   position: absolute;
-  top: 20px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  border: 2px solid black;
-  border-radius: 10px;
-  background-color: lightgray;
-  display: flex;
-} */
+  padding: 10px 50px;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
 
+.payTitle {
+  font-size: 20px;
+  margin: 0 0 5px 0;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.payInput {
+  padding: 10px;
+  margin: 10px 0px;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
+
+.payInput::placeholder {
+  color: rgb(163, 163, 163);
+}
+
+.cardIcons {
+  display: flex;
+}
+
+.cardIcon {
+  margin-right: 10px;
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sm {
+  width: 30%;
+}
+
+.payButton {
+  position: absolute;
+  height: 40px;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  background-color: #369e62;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: gray;
+  color: white;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.productImg {
+  width: 50%;
+}
+
+.productDetails {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 40%;
+  padding: 50px;
+}
+
+.productTitle {
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.productDesc {
+  font-style: 24px;
+  color: gray;
+}
+
+.colors,
+.sizes {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.color {
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: black;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.color:last-child {
+  background-color: darkblue;
+}
+
+.size {
+  padding: 5px 20px;
+  border: 1px solid black;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.productButton {
+  float: right;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.productButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.displayNone {
+  display: none;
+}
+
+/*tool tip start*/
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+/*tool tip end*/
+
+/* gallery style */
 .gallery {
   display: flex;
   padding: 50px;
@@ -287,11 +446,9 @@ nav {
   width: 100%;
   height: 450px;
 }
-
 .newSeason {
   display: flex;
 }
-
 .nsItem {
   flex: 1;
   background-color: black;
@@ -302,49 +459,40 @@ nav {
   justify-content: space-evenly;
   text-align: center;
 }
-
 .nsImg {
   width: 100%;
   height: 500px;
 }
-
 .nsTitle {
   font-size: 40px;
 }
-
 .nsButton {
   padding: 15px;
   font-weight: 600;
   cursor: pointer;
 }
-
 footer {
   display: flex;
 }
-
 .footerLeft {
   flex: 2;
   display: flex;
   justify-content: space-between;
   padding: 50px;
 }
-
 .fMenuTitle {
   font-size: 16px;
   margin-bottom: 5px;
 }
-
 .fList {
   padding: 0;
   list-style: none;
 }
-
 .fListItem {
   margin-bottom: 10px;
   color: gray;
   cursor: pointer;
 }
-
 .footerRight {
   flex: 1;
   padding: 50px;
@@ -352,29 +500,23 @@ footer {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .fInput {
   padding: 5px;
 }
-
 .fButton {
   padding: 5px;
   background-color: black;
   color: white;
 }
-
-.fIcons{
+.fIcons {
   display: flex;
 }
-
-.fIcon{
+.fIcon {
   width: 20px;
   height: 20px;
   margin-right: 10px;
 }
-
-.copyright{
+.copyright {
   font-weight: 300;
   font-size: 14px;
 }
-

@@ -175,3 +175,15 @@ currentSizeBox.forEach((sizeBox) => {
     sizeBox.style.color = "white";
   });
 });
+
+// Modal
+const paymentModal = document.querySelector(".paymentModal");
+const buyNow = document.querySelector(".buyNow");
+buyNow.addEventListener("click", () => {
+  paymentModal.classList.remove("displayNone");
+});
+
+const closeButton = document.querySelector(".close");
+closeButton.addEventListener("click", () => {
+  paymentModal.classList.add("displayNone");
+});
